@@ -3,6 +3,7 @@ angular-login-model
 POST data to server
 >
 >  user: {'userName': 'test',
+>
 >         'userPassword': 'test123'}
 
 ===================          
