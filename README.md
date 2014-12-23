@@ -1,9 +1,8 @@
 angular-login-model
 ===================
-POST data to server
->
->  user: {'userName': 'test',
->
+POST data to server<br />  
+
+>  user: {'userName': 'test',<br />  
 >         'userPassword': 'test123'}
 
 ===================          
