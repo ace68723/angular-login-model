@@ -7,12 +7,12 @@ POST data to server
 >         'userPassword': 'test123'}
 
 ===================          
-Server respond
-{'result': 0,
-  'rid': 1,
-  'uid': 2,
-  'token': 'sdfkdkqikdkkqe',
-  'error_msg': 'error'}
+Server respond <br />   
+{'result': 0,<br />  
+  'rid': 1,<br />  
+  'uid': 2,<br />  
+  'token': 'sdfkdkqikdkkqe',<br />  
+  'error_msg': 'error'}<br />  
   
-uid: user id
-rid: restaurant id
+uid: user id<br />  
+rid: restaurant id<br />  
