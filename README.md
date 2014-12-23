@@ -1,9 +1,10 @@
 angular-login-model
 ===================
 POST data to server
-  user: {'userName': 'test',
 >
-         'userPassword': 'test123'}
+>  user: {'userName': 'test',
+>
+>         'userPassword': 'test123'}
 
 ===================          
 Server respond
