@@ -25,7 +25,7 @@ describe('loginService',function  () {
      	  loginService.post(user);
      	   
      	   $httpBackend.flush();
-     	    expect(loginService.post(user)).toBe(0);
+     	    expect(loginService.post(user).result).toBe(0);
      	    
 
      	}),
@@ -42,7 +42,7 @@ describe('loginService',function  () {
 		  loginService.post(user);
 		   
 		   $httpBackend.flush();
-		    expect(loginService.post(user)).toBe(1);
+		    expect(loginService.post(user).result).toBe(1);
 		    
 
 		}),
