@@ -8,7 +8,7 @@ var model = angular.module('angular-login-model', []);
 	
 	model.post = function(user) {
 			$http.post('http://chanmao.ca/?r=%20rrclient/login', user).success(function(response) {
-		      model.result = response.result;
+		      model.result = response;
 		    }).error(function() {
 		      model.result = 'ERROR!';
 		    });
