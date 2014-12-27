@@ -47,9 +47,10 @@ Here we define a test suit called “loginServiceTest”.
 
 
 <h4>-Post success test</h4>
-	Once the loginService posts the data, the web server responses a JSON data with http status 201 code which means that request is successful.
-	 After that, loginService assigns the JSON data to the response object and returns it.
-	In this test the response object is {'result': 0, 'rid': 1,'uid': 2,'token': ‘sdfkdkqikdkkqe', 'error_msg': ‘pasword'}.	
+Once the loginService posts the data, the web server responses a JSON data with http status 201 code which means that request is successful. 
+After that, loginService assigns the JSON data to the response object and returns it.
+
+In this test the response object is {'result': 0, 'rid': 1,'uid': 2,'token': ‘sdfkdkqikdkkqe', 'error_msg': ‘pasword'}.	
 	
 Here for the test, we expect one of the response objects named ‘result’ to be 0.
 ```
