@@ -73,6 +73,7 @@ Here we define a test suit called “loginServiceTest”.
 	In this test the response object is {'result': 0, 'rid': 1,'uid': 2,'token': ‘sdfkdkqikdkkqe', 'error_msg': ‘pasword'}.	
 	
 Here for the test, we expect one of the response objects named ‘result’ to be 0.
+```
 it('should login success', function() {
      	var url ='login/';
      	var respond = {
@@ -88,6 +89,7 @@ it('should login success', function() {
      	$httpBackend.flush();
      	expect(loginService.post(user,url).result).toBe(0);
     }),
+```
 Here we define a test called “should login success”
 	1. define URL variable.
 	2. define a respond object which web server will respond.
@@ -114,6 +116,7 @@ Here we define a test called “should login success”
 	In this test the post error message is “post error!”	
 	
 Here for the test, we expect the response to be “post error!”.
+```
 it('should be ERROR!', function() {
 			
 			var respond = {
@@ -131,6 +134,7 @@ it('should be ERROR!', function() {
 		   
 
 });
+```
 Here we define a test called “should login success”
 	1. define URL variable.
 	2. define a respond object which web server will respond.
@@ -150,6 +154,7 @@ Here we define a test called “should login success”
 
 
 <h3>3. Code</h3>
+```
 var LoginService = angular.module('LoginService', []);
 
 
@@ -166,6 +171,7 @@ var LoginService = angular.module('LoginService', []);
 		     return loginService.response;
 	  };
 }]);
+```
 Here we define an angular module called LoginService
 	1. define a angular service in LoginService module called loginService.
             2. Inject $http service a angular built-in service.
