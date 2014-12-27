@@ -85,6 +85,7 @@ it('should login success', function() {
      	expect(loginService.post(user,url).result).toBe(0);
     }),
 ```
+```
 Here we define a test called “should login success”
 	1. define URL variable.
 	2. define a respond object which web server will respond.
@@ -95,7 +96,7 @@ Here we define a test called “should login success”
 	send  back the 201 http status code and the JSON object which we define in the above.
 	6. flush the request queue.
 	7. expect one of the response objects named ‘result’ to be 0.
-	 
+```	 
 
 
 
@@ -130,7 +131,9 @@ it('should be ERROR!', function() {
 
 });
 ```
-Here we define a test called “should login success”
+
+```
+Here we define a test called “should login success”  
 	1. define URL variable.
 	2. define a respond object which web server will respond.
 	3. use $httpBackend.expectPOST method to train the $httpBackend service to expect 
@@ -141,7 +144,7 @@ Here we define a test called “should login success”
 	6. flush the request queue.
 	7. expect the response to be “post error!”.
 	 
-
+```
 
 
 
@@ -167,6 +170,7 @@ var LoginService = angular.module('LoginService', []);
 	  };
 }]);
 ```
+```
 Here we define an angular module called LoginService
 	1. define a angular service in LoginService module called loginService.
             2. Inject $http service a angular built-in service.
@@ -179,7 +183,7 @@ Here we define an angular module called LoginService
             loginService.response.
 	7. once request fails assigns a message "post error!” to loginService.response.
 	8. return the loginService.response. 
-
+```
 
 
 
