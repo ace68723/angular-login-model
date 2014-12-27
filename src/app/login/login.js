@@ -1,60 +1,63 @@
 var model = angular.module('LoginCtrl-model', []);
 
 model.controller('loginCtrl', function (loginService) {
-		this.user = {'username':'',
+		var app = this;
+		app.user = {'username':'',
 					 'password':''	
 					}
-		this.submit = function  () {
-			this.url ='login/'
-			loginService.post(this.user, this.url)
-		 	this.response = loginService.post(this.user, this.url)
+		 
+		 app.loginService = loginService;
+		app.submit = function  () {
+			app.url ='login/'
+			app.loginService.post(app.user, app.url)
+		 	app.response = app.loginService.post(app.user, app.url)
 
-			// console.log(this.response)
-			if(this.response.result == '0'){
-				window.localStorage.setItem("sv_uid", this.response.uid);
-				window.localStorage.setItem("sv_rid", this.response.rid);
-				window.localStorage.setItem("sv_token", this.response.token);
+			// console.log(app.response)
+			if(app.response.result == '0'){
+				window.localStorage.setItem("sv_uid", app.response.uid);
+				window.localStorage.setItem("sv_rid", app.response.rid);
+				window.localStorage.setItem("sv_token", app.response.token);
 			}else{
-				alert(this.response.error_msg)
+				alert(app.response.error_msg)
 			}
 
 			return {
-					response: this.response,
-					result: this.response.result,
-					error_msg: this.response.error_msg
+					response: app.response,
+					result: app.response.result,
+					error_msg: app.response.error_msg
 					}
 		}
 
-		this.logout = function  () {
+		app.logout = function  () {
 			window.localStorage.removeItem("sv_uid");
 			window.localStorage.removeItem("sv_rid");
 			window.localStorage.removeItem("sv_token");
 		}
 
-		this.checkAuth = function  () {
-			this.url ='authorize/'
+		app.checkAuth = function  () {
+			app.url ='authorize/'
 			if(window.localStorage.getItem("sv_uid") !== null){
-				this.authData = {'rid': window.localStorage.getItem("sv_rid"),
+				app.authData = {'rid': window.localStorage.getItem("sv_rid"),
                         		   'uid': window.localStorage.getItem("sv_uid")
                         			}
-                loginService.post(this.authData, this.url)				        			
+                loginService.post(app.authData, app.url)				        			
 				
-				this.response = loginService.post(this.authData, this.url)
+				app.response = loginService.post(app.authData, app.url)
 
-				if(this.response.result == '0'){
+				if(app.response.result == '0'){
 					
                     }else{
-					alert(this.response.error_msg)
+					alert(app.response.error_msg)
 				}
 			}else{
 				return
 			}
 
 			return {
-					response: this.response,
-					result: this.response.result,
-					error_msg: this.response.error_msg,
-					authData: this.authData
+					response: app.response,
+					result: app.response.result,
+					error_msg: app.response.error_msg,
+					authData: app.authData
 			}
 
 		}

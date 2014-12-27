@@ -1,17 +1,18 @@
 'use strict';
 
-var model = angular.module('angular-login-model', []);
+var LoginService = angular.module('LoginService', []);
 
 
- model.service('loginService', [ '$http', function( $http) {
-	var model = this;
-	
-	model.post = function(user, url) {
-			$http.post('http://chanmao.ca/?r=%20rrclient/' + url, user).success(function(response) {
-		      model.result = response;
+ LoginService.service('loginService', [ '$http', function( $http) {
+	var loginService = this;
+	loginService.test ="this is a test";
+	loginService.post = function(user, url) {
+		$http.post('http://chanmao.ca/?r=%20rrclient/' + url, user)
+			.success(function(response) {
+		      loginService.result = response;
 		    }).error(function() {
-		      model.result = 'ERROR!';
+		      loginService.result = 'ERROR!';
 		    });
-		    return model.result;
-	  };
+		     return loginService.result;
+	  	};
 }]);

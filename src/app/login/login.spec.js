@@ -5,7 +5,7 @@ describe('loginService',function  () {
      var loginService, loginCtrl, $controller, $httpBackend;
      var user = {'userName': 'test',
                     'password': 'test123'};
-     beforeEach(module("angular-login-model"));
+     beforeEach(module("LoginService"));
      beforeEach(module("LoginCtrl-model"));
      beforeEach(inject(function  ($controller, _loginService_, _$httpBackend_) {
           loginService = _loginService_;
