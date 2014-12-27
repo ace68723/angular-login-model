@@ -33,25 +33,19 @@ Inside the “loginService” we have a method which expects to have two argumen
 
 <h3>2.Test</h3> 
 Here we define a test suit called “loginServiceTest”.
-> describe('loginService',function  () {
->
+```
+ describe('loginService',function  () {
   	var loginService, $httpBackend;
->
   	var user = {'userName': 'test',
->
        			'password': 'test123'};
->
   	beforeEach(module("LoginService"));
->
   	beforeEach(inject(function  (_loginService_, _$httpBackend_) {
->
   		loginService = _loginService_;
->
   		$httpBackend = _$httpBackend_;
->
     }));
->
+
   })
+```
   
 	1. define loginService and $httpBackend variable.
 	2. define the user data for the test.
@@ -69,7 +63,8 @@ Here we define a test suit called “loginServiceTest”.
 
 
 <h4>-Post success test</h4>
-	Once the loginService posts the data, the web server responses a JSON data with http status 201 code which means that request is successful. After that, loginService assigns the JSON data to the response object and returns it.
+	Once the loginService posts the data, the web server responses a JSON data with http status 201 code which means that request is successful.
+	 After that, loginService assigns the JSON data to the response object and returns it.
 	In this test the response object is {'result': 0, 'rid': 1,'uid': 2,'token': ‘sdfkdkqikdkkqe', 'error_msg': ‘pasword'}.	
 	
 Here for the test, we expect one of the response objects named ‘result’ to be 0.
