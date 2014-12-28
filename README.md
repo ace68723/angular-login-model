@@ -26,7 +26,7 @@ rid: restaurant id<br />
 “LoginService” module is a service module which is mainly used for sending JSON data via AJAX request. We registered a service called “loginService” to Login module via module#service API.
 
 <h4>-loginService</h4>
-We inject $http service, which is one of several built-in angular services, into “loginService” for making requests and handling responses from web server.  
+We inject $http service, which is one of several built-in angular services, into “loginService” for making requests and handling responses from web server.     
 
 Inside the “loginService” we have a method which expects to have two arguments, the request URL parameters and the POST data. This method has a success and an error method. Once http request is successful, the JSON data is assigned to “loginService.response”. Otherwise it assigns a post error message to  “loginService.response”.  After each request, return “loginService.response”.
 
@@ -69,6 +69,7 @@ Here we define a test suit called “loginServiceTest”.
 
 
 <h4>-Post success test</h4>
+
 	Once the loginService posts the data, the web server responses a JSON data with http status 201 code which means that request is successful. After that, loginService assigns the JSON data to the response object and returns it.
 	In this test the response object is {'result': 0, 'rid': 1,'uid': 2,'token': ‘sdfkdkqikdkkqe', 'error_msg': ‘pasword'}.	
 	
