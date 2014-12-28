@@ -1,22 +1,6 @@
 <h3>src/common/loginModel.js</h3>
 <h3>test: src/common/loginModel.spec.js</h3>
-<h3>use:loginService.post(user)</h3>
-===================
-POST data to server<br />  
-
->  user: {'userName': 'test',<br />  
->         'userPassword': 'test123'}
-
-===================          
-Server respond <br />   
->{'result': 0,<br />  
->  'rid': 1,<br />  
-  'uid': 2,<br />  
-  'token': 'sdfkdkqikdkkqe',<br />  
-  'error_msg': 'error'}<br />  
-
-uid: user id<br />  
-rid: restaurant id<br />
+<h3>use:loginService.post(data,url)</h3>
 
 
 ==========================================
@@ -33,25 +17,19 @@ Inside the “loginService” we have a method which expects to have two argumen
 
 <h3>2.Test</h3> 
 Here we define a test suit called “loginServiceTest”.
-> describe('loginService',function  () {
->
+```
+ describe('loginService',function  () {
   	var loginService, $httpBackend;
->
   	var user = {'userName': 'test',
->
        			'password': 'test123'};
->
   	beforeEach(module("LoginService"));
->
   	beforeEach(inject(function  (_loginService_, _$httpBackend_) {
->
   		loginService = _loginService_;
->
   		$httpBackend = _$httpBackend_;
->
     }));
->
+
   })
+```
   
 	1. define loginService and $httpBackend variable.
 	2. define the user data for the test.
@@ -69,9 +47,16 @@ Here we define a test suit called “loginServiceTest”.
 
 
 <h4>-Post success test</h4>
+<<<<<<< HEAD
 
 	Once the loginService posts the data, the web server responses a JSON data with http status 201 code which means that request is successful. After that, loginService assigns the JSON data to the response object and returns it.
 	In this test the response object is {'result': 0, 'rid': 1,'uid': 2,'token': ‘sdfkdkqikdkkqe', 'error_msg': ‘pasword'}.	
+=======
+Once the loginService posts the data, the web server responses a JSON data with http status 201 code which means that request is successful. 
+After that, loginService assigns the JSON data to the response object and returns it.
+
+In this test the response object is {'result': 0, 'rid': 1,'uid': 2,'token': ‘sdfkdkqikdkkqe', 'error_msg': ‘pasword'}.	
+>>>>>>> bd6eca28cd1774969743a0b7098b7ccdccef646e
 	
 Here for the test, we expect one of the response objects named ‘result’ to be 0.
 ```
@@ -91,6 +76,7 @@ it('should login success', function() {
      	expect(loginService.post(user,url).result).toBe(0);
     }),
 ```
+```
 Here we define a test called “should login success”
 	1. define URL variable.
 	2. define a respond object which web server will respond.
@@ -101,7 +87,7 @@ Here we define a test called “should login success”
 	send  back the 201 http status code and the JSON object which we define in the above.
 	6. flush the request queue.
 	7. expect one of the response objects named ‘result’ to be 0.
-	 
+```	 
 
 
 
@@ -113,8 +99,10 @@ Here we define a test called “should login success”
 
 
 <h4>-Post fail test</h4>
-	Once the loginService posts the data, the web server responses a JSON data with http status 401 code which means that request fails. After that, loginService assigns a post error message to the response object and returns it.
-	In this test the post error message is “post error!”	
+Once the loginService posts the data, the web server responses a JSON data with http status 401 code which means that request fails. After that, loginService assigns a post error message to the response object and returns it.
+	
+In this test the post error message is “post error!”
+	
 	
 Here for the test, we expect the response to be “post error!”.
 ```
@@ -136,7 +124,9 @@ it('should be ERROR!', function() {
 
 });
 ```
-Here we define a test called “should login success”
+
+```
+Here we define a test called “should login success”  
 	1. define URL variable.
 	2. define a respond object which web server will respond.
 	3. use $httpBackend.expectPOST method to train the $httpBackend service to expect 
@@ -147,7 +137,7 @@ Here we define a test called “should login success”
 	6. flush the request queue.
 	7. expect the response to be “post error!”.
 	 
-
+```
 
 
 
@@ -173,6 +163,7 @@ var LoginService = angular.module('LoginService', []);
 	  };
 }]);
 ```
+```
 Here we define an angular module called LoginService
 	1. define a angular service in LoginService module called loginService.
             2. Inject $http service a angular built-in service.
@@ -185,7 +176,7 @@ Here we define an angular module called LoginService
             loginService.response.
 	7. once request fails assigns a message "post error!” to loginService.response.
 	8. return the loginService.response. 
-
+```
 
 
 
